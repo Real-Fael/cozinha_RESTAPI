@@ -1,5 +1,6 @@
 import express from 'express';
 import cozinhaRoutes from './src/routes/cozinhaRoutes';
+import garconRoutes from './src/routes/garconRoutes';
 
 class App {
   constructor() {
@@ -17,6 +18,7 @@ class App {
     // configura a rota cozinha utilizando os methods de Routes
 
     this.app.use('/cozinha', cozinhaRoutes);
+    this.app.use('/garcom', garconRoutes);
   }
 }
 
