@@ -6,6 +6,14 @@ class DataBasePedidos {
     return pedidosBase;// converte de JSON para JS Object
   }
 
+  pegarPedido(id) {
+    const idInt = parseInt(id, 10);
+    if ((idInt >= 0) && (idInt < pedidosBase.pedidos.length)) {
+      return pedidosBase.pedidos[idInt];
+    }
+    throw new Error('incorret Range');
+  }
+
   gravarArquivo() {
     try {
       // escreve no aquivo JSON

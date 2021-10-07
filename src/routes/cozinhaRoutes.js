@@ -10,19 +10,16 @@ router.get('/', (req, res) => {
 
 router.put('/', (req, res) => {
   if (!req.body.id
-    || !req.body.descricaoPedido
-    || !req.body.numMesa
     || !req.body.situacao) { return res.sendStatus(400); }
 
   try {
-    pedidosController.alterarPedido(req.body.id, req.body.descricaoPedido,
-      req.body.numMesa, req.body.situacao);
+    pedidosController.alterarSituacaoPedido(req.body.id, req.body.situacao);
   } catch (e) {
     return res.sendStatus(400);
   }
 
-  console.log(req.body);
-  return res.send('hallo PUT');
+  // console.log(req.body);
+  return res.send('Alterado com Sucesso');
 });
 
 export default router;
